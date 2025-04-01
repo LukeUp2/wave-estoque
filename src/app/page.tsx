@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="bg-black min-h-screen min-w-screen">
+      <main className="bg-black min-h-screen min-w-screen text-white">
         <Header />
         <Stock />
 
