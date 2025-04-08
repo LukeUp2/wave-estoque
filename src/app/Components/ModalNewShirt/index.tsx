@@ -185,7 +185,7 @@ export function ModalNewShirt({ open, handleOpened }: Props) {
               disabled={loading}
               className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded font-semibold"
             >
-              {!loading ? (
+              {loading ? (
                 <div className="flex flex-1 items-center justify-center">
                   <ArrowsClockwise
                     size={24}
