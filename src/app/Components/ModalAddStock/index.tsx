@@ -54,13 +54,16 @@ export function ModalAddStock({
     };
 
     try {
-      await fetch(`http://localhost:5133/api/estoque/${camisa.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      await fetch(
+        `https://deploy-estoque-api.fly.dev/api/estoque/${camisa.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
     } catch (error) {
       console.log(error);
     } finally {

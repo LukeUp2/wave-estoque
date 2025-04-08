@@ -26,7 +26,7 @@ export function ShirtCard({ camisa, handleButtonAction }: Props) {
         estoque: camisa.emEstoque,
       };
       const response = await fetch(
-        `http://localhost:5133/api/estoque/${camisa.id}`,
+        `https://deploy-estoque-api.fly.dev/api/estoque/${camisa.id}`,
         {
           method: "PUT",
           headers: {

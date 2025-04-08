@@ -51,7 +51,10 @@ export function Stock() {
   async function getData() {
     try {
       setLoading(true);
-      var result = await fetch("http://localhost:5133/api/estoque", {});
+      var result = await fetch(
+        "https://deploy-estoque-api.fly.dev/api/estoque",
+        {}
+      );
       const data = await result.json();
       setShirts(data.camisas);
     } catch (error) {

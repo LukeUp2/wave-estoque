@@ -49,7 +49,7 @@ export function ModalNewShirt({ open, handleOpened }: Props) {
     };
 
     try {
-      await fetch("http://localhost:5133/api/camisa", {
+      await fetch("https://deploy-estoque-api.fly.dev/api/camisa", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
