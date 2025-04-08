@@ -185,12 +185,14 @@ export function ModalNewShirt({ open, handleOpened }: Props) {
               disabled={loading}
               className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded font-semibold"
             >
-              {loading ? (
-                <ArrowsClockwise
-                  size={24}
-                  color="oklch(0.723 0.219 149.579)"
-                  className="animate-spin duration-200 justify-self-center"
-                />
+              {!loading ? (
+                <div className="flex flex-1 items-center justify-center">
+                  <ArrowsClockwise
+                    size={24}
+                    color="oklch(0.723 0.219 149.579)"
+                    className="animate-spin duration-200"
+                  />
+                </div>
               ) : (
                 "Salvar"
               )}
