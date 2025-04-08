@@ -45,7 +45,7 @@ export function ShirtCard({ camisa, handleButtonAction }: Props) {
   return (
     <div
       key={camisa.id}
-      className="flex justify-center items-center flex-col border-1 border-gray-500 p-2 w-[500px] rounded-md mt-4 hover:scale-101 duration-200 mx-1 text-white"
+      className="flex justify-center items-center flex-col border-1 border-gray-500 p-2 w-full max-w-[500px] rounded-md mt-4 hover:scale-101 duration-200 text-white px-2"
     >
       <h1>
         {camisa.nome.toLocaleUpperCase()} ({camisa.cor})
@@ -69,7 +69,7 @@ export function ShirtCard({ camisa, handleButtonAction }: Props) {
         </div>
 
         {camisa.emEstoque.length > 0 ? (
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 px-3.5">
             {camisa.emEstoque.map((item, index) => {
               return (
                 <div

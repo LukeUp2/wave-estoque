@@ -97,8 +97,14 @@ export function ModalAddStock({
               </select>
               <input
                 type="number"
-                value={quantidade}
-                onChange={(e) => setQuantidade(Number(e.target.value))}
+                value={quantidade === 0 ? "" : quantidade}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Remove zeros à esquerda e converte pra número
+                  const cleanValue = value.replace(/^0+(?!$)/, "");
+                  setQuantidade(Number(cleanValue));
+                  setQuantidade(Number(e.target.value));
+                }}
                 placeholder="Quantidade"
                 className="p-2 border rounded w-2/3"
               />

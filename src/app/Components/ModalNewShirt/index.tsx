@@ -139,9 +139,14 @@ export function ModalNewShirt({ open, handleOpened }: Props) {
                   </select>
                   <input
                     type="number"
-                    min={0}
-                    value={quantidadeAtual}
-                    onChange={(e) => setQuantidadeAtual(Number(e.target.value))}
+                    value={quantidadeAtual === 0 ? "" : quantidadeAtual}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      // Remove zeros à esquerda e converte pra número
+                      const cleanValue = value.replace(/^0+(?!$)/, "");
+                      setQuantidadeAtual(Number(cleanValue));
+                      setQuantidadeAtual(Number(e.target.value));
+                    }}
                     placeholder="Quantidade"
                     className="p-2 border rounded w-full"
                   />
